@@ -2,6 +2,52 @@
 
 Aplicación de escritorio desarrollada en **JavaFX + PostgreSQL**, que permite la gestión completa de postulantes, incluyendo validaciones, control de roles, dashboard informativo y exportación de datos.
 
+📁 1️⃣ Estructura del proyecto
+```
+postulantes-app2/
+│
+├── pom.xml
+├── README.md
+├── .gitignore
+│
+├── src/
+│   └── main/
+│       ├── java/
+│       │   ├── application/
+│       │   │   └── App.java
+│       │   │
+│       │   ├── controller/
+│       │   │   ├── LoginController.java
+│       │   │   └── PostulanteController.java
+│       │   │
+│       │   ├── dao/
+│       │   │   ├── PostulanteDAO.java
+│       │   │   ├── UbigeoDAO.java
+│       │   │   ├── DashboardDAO.java
+│       │   │   └── UsuarioDAO.java
+│       │   │
+│       │   ├── model/
+│       │   │   ├── Postulante.java
+│       │   │   └── Usuario.java
+│       │   │
+│       │   └── util/
+│       │       ├── ConexionBD.java
+│       │       └── Validador.java
+│       │
+│       └── resources/
+│           └── view/
+│               ├── LoginView.fxml
+│               ├── MainView.fxml
+│               ├── PostulanteForm.fxml
+│               ├── PostulanteListView.fxml
+│               ├── PostulanteDetalle.fxml
+│               ├── light.css
+│               └── dark.css
+│
+└── target/
+    └── (generado automáticamente por Maven – excluido por .gitignore)
+```
+
 ---
 
 ## 🚀 Funcionalidades principales
