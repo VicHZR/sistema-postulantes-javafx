@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com" 
+            xmlns:fx="http://javafx.com" 
+            fx:controller="controller.PostulanteController"
+            prefWidth="1100" prefHeight="650">
+
+    <!-- SECCIÓN DE FILTROS (TOP) -->
+    <top>
+        <VBox spacing="10" style="-fx-background-color: white; background-color: white;">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            
+            <Label text="Listado General de Postulantes" 
+                   style="-fx-font-size:24px; -fx-font-weight:bold; -fx-text-fill: #1976d2;"/>
+            
+            <HBox spacing="15" alignment="CENTER_LEFT" style="-fx-padding: 10 0 0 0;">
+                <Label text="DNI:" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtFiltroDni" promptText="Buscar DNI" prefWidth="120"/>
+                
+                <Label text="Nombre:" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="txtFiltroNombre" promptText="Nombre o apellido" prefWidth="200"/>
+                
+                <Label text="Sexo:" style="-fx-font-weight: bold;"/>
+                <ComboBox fx:id="cmbFiltroSexo" prefWidth="110"/>
+                
+                <Button text="Limpiar Filtros" 
+                        onAction="#limpiarFiltros" 
+                        style="-fx-background-color: #78909c; -fx-text-fill: white;"/>
+
+                <!-- Botón adicional para la lógica de consulta de ubigeos -->
+                <Button text="Consultar Ubigeos" 
+                        onAction="#consultarUbigeos" 
+                        style="-fx-background-color: #546e7a; -fx-text-fill: white;"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- TABLA DE DATOS (CENTER) -->
+    <center>
+        <TableView fx:id="tblPostulantes">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                <TableColumn fx:id="colNombre" text="Nombre" prefWidth="180"/>
+                <TableColumn fx:id="colApellidoP" text="Apellido" prefWidth="180"/>
+                <TableColumn fx:id="colDni" text="DNI" prefWidth="110"/>
+                <TableColumn fx:id="colCorreo" text="Correo" prefWidth="220"/>
+                <TableColumn fx:id="colSexo" text="Sexo" prefWidth="80"/>
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+            </columnResizePolicy>
+        </TableView>
+    </center>
+
+    <!-- BARRA DE ACCIONES ACTUALIZADA (BOTTOM) -->
+    <bottom>
+        <HBox spacing="10" alignment="CENTER" style="-fx-background-color: #f5f5f5; background-color: #f5f5f5;">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            
+            <Button fx:id="btnVerDetalle" 
+                    text="🔎 Ver Detalle" 
+                    onAction="#verDetallePostulante" 
+                    prefHeight="45" prefWidth="130"/>
+            
+            <Button fx:id="btnEditar"
+                    text="📝 Editar" 
+                    onAction="#editarPostulante" 
+                    prefHeight="45" prefWidth="100"/>
+            
+            <Button fx:id="btnEditarCorreo"
+                    text="📧 Correo" 
+                    onAction="#mostrarActualizarCorreo" 
+                    prefHeight="45" prefWidth="100"/>
+
+            <Button fx:id="btnExportar"
+                    text="📥 Exportar CSV"
+                    onAction="#exportarCSV"
+                    prefHeight="45" prefWidth="140"
+                    style="-fx-background-color: #388e3c; -fx-text-fill: white; background-color: #388e3c;"/>
+            
+            <Button fx:id="btnEliminar"
+                    text="🗑️ Eliminar" 
+                    onAction="#eliminarPostulante" 
+                    styleClass="button-danger" 
+                    prefHeight="45" prefWidth="110"/>
+            
+            <Button fx:id="btnCerrar"
+                    text="❌ Cerrar" 
+                    onAction="#cerrarModalListado" 
+                    prefHeight="45" prefWidth="100"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

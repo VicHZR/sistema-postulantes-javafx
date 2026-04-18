@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com" 
+            xmlns:fx="http://javafx.com" 
+            fx:controller="controller.PostulanteController">
+
+    <!-- MENÚ SUPERIOR ACTUALIZADO -->
+    <top>
+        <MenuBar>
+            <Menu text="Postulantes">
+                <MenuItem text="Registrar" onAction="#abrirFormularioRegistro"/>
+                <MenuItem text="Ver Listado" onAction="#abrirListado"/>
+            </Menu>
+
+            <Menu text="Apariencia">
+                <MenuItem text="Tema Claro" onAction="#temaClaro"/>
+                <MenuItem text="Tema Oscuro" onAction="#temaOscuro"/>
+            </Menu>
+
+            <Menu text="Salir">
+                <MenuItem text="Cerrar aplicación" onAction="#cerrarAplicacion"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <!-- DASHBOARD CENTRAL -->
+    <center>
+        <VBox spacing="25" alignment="CENTER" style="-fx-background-color: #f4f7f6;">
+            <padding>
+                <Insets top="30" right="30" bottom="30" left="30"/>
+            </padding>
+
+            <Label text="Sistema de Gestión de Postulantes"
+                   style="-fx-font-size:28px; -fx-font-weight:bold; -fx-text-fill: #1976d2;"/>
+
+            <Label text="Gestione registros y ubigeos de manera segura y eficiente"
+                   style="-fx-font-size:15px; -fx-text-fill: #546e7a;"/>
+
+            <HBox spacing="20" alignment="CENTER">
+                <Button text="➕ Registrar Postulante"
+                        onAction="#abrirFormularioRegistro"
+                        style="-fx-padding: 10 20; -fx-font-size: 14px;"/>
+                
+                <Button text="📊 Ver Listado General"
+                        onAction="#abrirListado"
+                        style="-fx-padding: 10 20; -fx-font-size: 14px;"/>
+            </HBox>
+
+            <Separator maxWidth="600"/>
+
+            <!-- TARJETA DE RESUMEN CON ID DE ESTADÍSTICAS -->
+            <VBox spacing="15" maxWidth="450" 
+                  style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);">
+                
+                <Label text="📈 Resumen de Datos"
+                       style="-fx-font-size:18px; -fx-font-weight:bold; -fx-text-fill: #2c3e50;"/>
+
+                <GridPane hgap="30" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="150" />
+                        <ColumnConstraints hgrow="ALWAYS" halignment="RIGHT" />
+                    </columnConstraints>
+
+                    <Label text="👤 Total Postulantes:" GridPane.rowIndex="0" style="-fx-font-weight: bold;"/>
+                    <Label fx:id="lblTotalPostulantes" text="0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="0" 
+                           style="-fx-font-size: 14px; -fx-text-fill: #1976d2;"/>
+
+                    <Label text="♂ Masculino:" GridPane.rowIndex="1" style="-fx-font-weight: bold;"/>
+                    <Label fx:id="lblTotalMasculino" text="0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                    <Label text="♀ Femenino:" GridPane.rowIndex="2" style="-fx-font-weight: bold;"/>
+                    <Label fx:id="lblTotalFemenino" text="0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                    <Label text="🗺️ Ubigeos usados:" GridPane.rowIndex="3" style="-fx-font-weight: bold;"/>
+                    <Label fx:id="lblTotalUbigeos" text="0"
+                           GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                </GridPane>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

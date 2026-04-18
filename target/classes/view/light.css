@@ -1,0 +1,50 @@
+/* GENERAL */
+.root {
+    -fx-background-color: #f5f5f5;
+    background-color: #f5f5f5; /* Silencia advertencia */
+    
+    -fx-font-family: "Segoe UI";
+    font-family: "Segoe UI"; /* Silencia advertencia */
+    
+    -fx-text-fill: #222;
+}
+
+/* LABELS */
+.label {
+    -fx-text-fill: #222;
+}
+
+/* BOTONES */
+.button {
+    -fx-background-color: #1976d2;
+    background-color: #1976d2;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #1565c0;
+    background-color: #1565c0;
+}
+
+/* TABLE */
+.table-view {
+    -fx-background-color: white;
+    background-color: white;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #1976d2;
+    background-color: #1976d2;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+}
+
+/* Estilo para botón de eliminar */
+.button-danger {
+    -fx-background-color: #d32f2f;
+    background-color: #d32f2f;
+}

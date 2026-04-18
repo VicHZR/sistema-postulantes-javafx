@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com"
+      fx:controller="controller.PostulanteController"
+      spacing="15" prefWidth="450">
+    
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <Label text="Detalle del Postulante"
+           style="-fx-font-size:22px; -fx-font-weight:bold; -fx-text-fill: #1976d2;"/>
+
+    <Separator/>
+
+    <GridPane hgap="15" vgap="12">
+        <columnConstraints>
+            <ColumnConstraints minWidth="100" halignment="RIGHT" />
+            <ColumnConstraints hgrow="ALWAYS" />
+        </columnConstraints>
+
+        <Label text="Nombre:" GridPane.rowIndex="0" style="-fx-font-weight: bold;"/>
+        <Label fx:id="lblNombre" text="..." GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="DNI:" GridPane.rowIndex="1" style="-fx-font-weight: bold;"/>
+        <Label fx:id="lblDni" text="..." GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Correo:" GridPane.rowIndex="2" style="-fx-font-weight: bold;"/>
+        <Label fx:id="lblCorreo" text="..." GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Teléfono:" GridPane.rowIndex="3" style="-fx-font-weight: bold;"/>
+        <Label fx:id="lblTelefono" text="..." GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="Sexo:" GridPane.rowIndex="4" style="-fx-font-weight: bold;"/>
+        <Label fx:id="lblSexo" text="..." GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+        <Label text="Ubigeo:" GridPane.rowIndex="5" style="-fx-font-weight: bold;"/>
+        <Label fx:id="lblUbigeo" text="..." GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    </GridPane>
+
+    <Separator/>
+
+    <HBox alignment="CENTER_RIGHT">
+        <Button text="Cerrar Detalle" 
+                onAction="#cerrarDetalle" 
+                style="-fx-padding: 10 25;"/>
+    </HBox>
+
+</VBox>

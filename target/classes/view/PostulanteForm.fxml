@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="controller.PostulanteController"
+          hgap="15"
+          vgap="15"
+          alignment="CENTER"
+          prefWidth="500.0" 
+          prefHeight="650.0">
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30"/>
+    </padding>
+
+    <columnConstraints>
+        <ColumnConstraints minWidth="120" prefWidth="150" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="200" prefWidth="300" />
+    </columnConstraints>
+
+    <Label text="Registro de Postulante"
+           GridPane.columnSpan="2"
+           style="-fx-font-size:22px; -fx-font-weight:bold;" 
+           GridPane.halignment="CENTER">
+        <GridPane.margin>
+            <Insets bottom="10"/>
+        </GridPane.margin>
+    </Label>
+
+    <Label text="Nombre:" GridPane.rowIndex="1"/>
+    <TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="Apellido Paterno:" GridPane.rowIndex="2"/>
+    <TextField fx:id="txtApellidoP" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <Label text="Apellido Materno:" GridPane.rowIndex="3"/>
+    <TextField fx:id="txtApellidoM" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+    <Label text="DNI:" GridPane.rowIndex="4"/>
+    <TextField fx:id="txtDni" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+
+    <Label text="Correo:" GridPane.rowIndex="5"/>
+    <TextField fx:id="txtCorreo" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+    <Label text="Celular:" GridPane.rowIndex="6"/>
+    <TextField fx:id="txtCelular" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+    <Label text="Sexo:" GridPane.rowIndex="7"/>
+    <ComboBox fx:id="cmbSexo" GridPane.columnIndex="1" GridPane.rowIndex="7" maxWidth="Infinity"/>
+
+    <Label text="Ubigeo:" GridPane.rowIndex="8"/>
+    <TextField fx:id="txtUbigeo" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+
+    <!-- SECCIÓN DE BOTONES ACTUALIZADA -->
+    <HBox spacing="10"
+          GridPane.columnSpan="2"
+          GridPane.rowIndex="9"
+          alignment="CENTER">
+        <padding>
+            <Insets top="10"/>
+        </padding>
+
+        <Button fx:id="btnGuardar"
+                text="Guardar"
+                onAction="#guardarPostulante"
+                style="-fx-background-color: #2196F3; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 20;"/>
+        
+        <Button text="Limpiar" 
+                onAction="#limpiarFormulario" 
+                style="-fx-padding: 8 20;"/>
+    </HBox>
+
+    <!-- MENSAJE DE VALIDACIÓN -->
+    <Label fx:id="lblMensaje"
+           GridPane.columnSpan="2"
+           GridPane.rowIndex="10"
+           style="-fx-text-fill: red; -fx-font-weight: bold;"
+           GridPane.halignment="CENTER"
+           text=""/>
+
+</GridPane>
