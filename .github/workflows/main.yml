@@ -22,4 +22,9 @@ jobs:
         cache: maven
 
     - name: Compilar y Ejecutar Pruebas con Maven
+      # verify ejecuta: compilación, tests y empaquetado inicial
       run: mvn -B clean verify
+
+    - name: Verificar errores de compilación
+      if: failure()
+      run: echo "La compilación o los tests fallaron. Revisa el log de Maven arriba."
