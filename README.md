@@ -109,17 +109,5 @@ usuario
 - portafolio
 - entrevistas
 
----
-
-## 4️⃣ Inicializar el repositorio Git
-
-En la **carpeta raíz del proyecto**, abre PowerShell y ejecuta:
-
-```bash
-git init
-git add .
-git commit -m "Proyecto JavaFX - Sistema de Postulantes"
-```
-
 📌 Autor
 Victor Hugo Guzman Prieto
