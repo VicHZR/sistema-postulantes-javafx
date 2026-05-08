@@ -20,7 +20,7 @@ public class PostulanteDAO {
             cs.setString(3, p.getApellidoMaterno());
             cs.setString(4, p.getDni());
             cs.setString(5, p.getCorreo());
-            cs.setString(6, ""); // Teléfono fijo (parámetro vacío según SP)
+            cs.setString(6, ""); 
             cs.setString(7, p.getTelefonoCelular());
             cs.setString(8, p.getSexo());
             cs.setString(9, p.getUbigeo());
@@ -85,7 +85,7 @@ public class PostulanteDAO {
     }
 
     /**
-     * Obtiene una lista de ubigeos válidos (Top 30).
+     * Obtiene una lista de ubigeos válidos
      */
     public List<String> obtenerUbigeosValidos() throws Exception {
         List<String> lista = new ArrayList<>();
